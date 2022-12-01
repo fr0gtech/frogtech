@@ -7,11 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pull" : "git pull && yarn && pm2 delete frogtech | yarn pm2:start",
+    "pull": "git pull && yarn && pm2 delete frogtech | yarn pm2:start",
     "pm2:start": "pm2 start npm --name 'frogtech' -- start",
     "pm2:restart": "pm2 restart frogtech"
   },
   "dependencies": {
+    "@svgr/webpack": "^6.5.1",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
@@ -22,6 +23,7 @@
     "postcss": "^8.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sharp": "^0.31.2",
     "tailwindcss": "^3.2.4",
     "typescript": "4.9.3"
   }

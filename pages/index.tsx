@@ -1,7 +1,10 @@
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-
+const ArticleComp = dynamic(() => import('../components/article'), {
+  ssr: false,
+})
 export default function Home() {
   return (
     <div className='container mx-auto'>
@@ -16,28 +19,29 @@ export default function Home() {
           frogTech
           <Image height={90} width={90} alt="frog" src="/frog.png" />
         </h1>
-        <div className='flex md:px-40 flex-wrap justify-center w-full gap-4'>
-          <div className='border-2 border-opacity-90 border-neutral-900 rounded-md p-5 max-w-[250px] hover:border-[#003233]  duration-700'>
-
-            <Link href="https://poking.frogtech.dev">
-              <h2 className='text-3xl'>POKING &rarr;</h2>
-            </Link>
-
-            <p className='text-1xl'>Do POKING, be the second or third to listen to a soon to be popular song</p>
-            <Link href="https://github.com/fr0gtech/spoty-stalk">
-              <div className="bg-neutral-900 p-2 rounded mt-3 duration-500 !text-white opacity-40 hover:opacity-95">
-                <p className='!text-sm !mt-1 font-semibold'>spoty-stalk - by frogtech</p>
-                <p className='!text-sm !my-1'>stalk someones public spotify playlists </p>
-              </div>
-            </Link>
-          </div>
-          <div className='border-2 border-opacity-90 border-neutral-900 rounded-md p-5 max-w-[250px] hover:border-[#003233]  duration-700'>
-            <Link href="https://poking.frogtech.dev">
-              <h2 className='text-3xl'>More Soon &rarr;</h2>
-            </Link>
-            <p className='text-1xl'>Join the most elite frogs</p>
-            <p className='opacity-50'>if ur not a bot join discord: <code className="bg-neutral-900 text-xs p-[2px] rounded">uggcf://qvfpbeq.tt/ac5eUPEXg2</code></p>
-          </div>
+        <div className=' flex md:px-40 flex-wrap justify-center w-full gap-4'>
+     
+          <ArticleComp
+          color="cyan-500"
+            link="https://poking.frogtech.dev"
+            title="POKING"
+            text="Do POKING, be the second or third to listen to a soon to be popular song"
+            cta={{
+              title:"spoty-stalk - by frogtech",
+              text:  "stalk someones public spotify playlists",
+              link: "https://github.com/fr0gtech/spoty-stalk"}
+              }/>
+              
+          <ArticleComp
+          color="blue-500"
+          link="#"
+            title="More Soon"
+            text="Join the most elite frogs, build the future!"
+            cta={{
+              title:"if !bot join discord:",
+              text:  <code className="bg-neutral-900 text-xs p-[2px] rounded">uggcf://qvfpbeq.tt/ac5eUPEXg2</code>,
+              link: "#"}
+              }/>
         </div>
       </main>
       <footer className='text-center'>
