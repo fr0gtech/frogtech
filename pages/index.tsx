@@ -27,9 +27,9 @@ export default function Home() {
         <div className=' flex md:p-20 flex-wrap justify-center w-full gap-4'>
           <ArticleComp
             color="cyan-500"
-            link="https://poking.frogtech.dev"
-            title="POKING"
-            text="Do POKING, be the second or third to listen to a soon to be popular song"
+            link="https://pokeING.frogtech.dev"
+            title="pokeING"
+            text="Do pokeING, be the second or third to listen to a soon to be popular song"
             cta={{
               title: "spoty-stalk - by frogtech",
               text: "stalk someones public spotify playlists",
