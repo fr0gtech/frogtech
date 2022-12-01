@@ -2,7 +2,7 @@ import Link from "next/link"
 import Github from "../public/github.svg"
 
 function FooterComp(){
-    return (<footer className='text-center p-4'>
+    return (<footer className='text-center p-10'>
         <div className='flex justify-center gap-3 items-center'>
           <div>
             FrogTech &copy; {new Date().getFullYear()}
