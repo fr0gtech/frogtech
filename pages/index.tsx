@@ -2,7 +2,8 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import useSound from 'use-sound'
 import FooterComp from '../components/footer'
 import Github from "../public/github.svg"
 
@@ -10,8 +11,25 @@ const ArticleComp = dynamic(() => import('../components/article'), {
   ssr: false,
 })
 export default function Home() {
+  const clickSound = '/ui-click.mp3';
+  const pingSound = '/ping.mp3';
   const [iwantIn, setIwantIn] = useState(1)
 
+  const [playbackRate, setPlaybackRate] = useState<any>(1);
+  const [play] = useSound(clickSound, {
+    playbackRate: playbackRate,
+    volume: 0.1,
+  });
+  const [playPing] = useSound(pingSound, {
+      playbackRate: 1.1,
+      volume: 0.2,
+    });
+  const handleClick = () => {
+    setIwantIn(iwantIn + 1)
+    setPlaybackRate(playbackRate > 3 ? 1 : playbackRate + 0.1);
+    if (playbackRate > 3) playPing()
+    play();
+    }
   return (
     <div className='mx-auto flex flex-col'>
       <Head>
@@ -48,8 +66,10 @@ export default function Home() {
         <div className='container rounded mx-auto py-10 p-10 flex justify-between items-center relative flex-col xl:flex-row gap-3'>
           <h3 className='text-3xl'>Join the most e1337 frogs & build the future!</h3>
           <div>
-
-            <button onClick={()=>setIwantIn(iwantIn + 1)} className="shadow text-sm xl:text-xl bg-neutral-900 p-2 rounded select-none cursor-pointer active:scale-[1.01] active:rotate-[.5deg] duration-200">
+            {playbackRate > 3 &&
+            <span className=''>🔔</span>
+            }
+            <button onClick={handleClick} className="shadow text-sm xl:text-xl bg-neutral-900 p-2 rounded select-none cursor-pointer active:scale-[1.01] active:rotate-[.5deg] duration-200">
               if not bot joinDiscord(uggcf://qvfpbeq.tt/ac5eUPEXg2)
               </button>
             <div className='flex flex-col gap-3'>
@@ -60,7 +80,7 @@ export default function Home() {
               {iwantIn > 1 && "uggcf://qvfpbeq.tt/nvagabjnllbhpyvpxgungzhpu".length * 5 >= iwantIn &&
               <div className='!text-sm absolute'>
                 {"uggcf://qvfpbeq.tt/nvagabjnllbhpyvpxgungzhpu".split('').map((char: any, i: any) => {
-                  if (i > iwantIn / 5)
+                  if (i > iwantIn / 3)
                     return
                   return char.replace(/[a-zA-Z]/g, function (c: any) {
                     return String.fromCharCode((c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26)
