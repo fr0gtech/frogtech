@@ -1,34 +1,20 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import useSound from 'use-sound'
+import { useState } from 'react'
 import FooterComp from '../components/footer'
-import Github from "../public/github.svg"
 
 const ArticleComp = dynamic(() => import('../components/article'), {
   ssr: false,
 })
 export default function Home() {
-  const clickSound = '/ui-click.mp3';
-  const pingSound = '/ping.mp3';
   const [iwantIn, setIwantIn] = useState(1)
 
   const [playbackRate, setPlaybackRate] = useState<any>(1);
-  const [play] = useSound(clickSound, {
-    playbackRate: playbackRate,
-    volume: 0.1,
-  });
-  const [playPing] = useSound(pingSound, {
-      playbackRate: 1.1,
-      volume: 0.2,
-    });
+
   const handleClick = () => {
     setIwantIn(iwantIn + 1)
-    setPlaybackRate(playbackRate > 3 ? 1 : playbackRate + 0.1);
-    if (playbackRate > 3) playPing()
-    play();
+
     }
   return (
     <div className='mx-auto flex flex-col'>
