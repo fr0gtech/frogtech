@@ -40,9 +40,24 @@ export default function Home() {
               link: "https://github.com/fr0gtech/spoty-stalk"
             }}
             tags={[
-              { name: 'app', color: 'bg-cyan-500' },
               { name: 'open source', color: 'bg-purple-500' },
               { name: 'spotify', color: 'bg-[#1DB954]' }
+
+            ]}
+          />
+          <ArticleComp
+            color="cyan-500"
+            link="https://poke.frogtech.dev"
+            title="poke+"
+            text="Create vod highlights from chat. Show graph like youtube but its chat activity."
+
+            cta={{
+              title: "streamHighlights - by frogtech",
+              text: "not yet opensource",
+              link: "https://poke.frogtech.dev"
+            }}
+            tags={[
+              { name: 'twitch', color: 'bg-[#9147FF]' }
 
             ]}
           />
