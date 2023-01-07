@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
 import FooterComp from '../components/footer'
-
+import Frog from '../public/frog.svg'
 const ArticleComp = dynamic(() => import('../components/article'), {
   ssr: false,
 })
@@ -24,9 +24,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='flex flex-col'>
-        <h1 className="text-5xl flex gap-3 flex-wrap items-center justify-center my-5">
+        <h1 className="text-5xl flex gap-4 flex-wrap items-center justify-center my-5">
           frogTech
-          <Image height={90} width={90} alt="frog" src="/frog.png" className=' brightness-200' />
+          <div className='clip'>
+          <Frog fill="#eeeeee" width={286 / 3} height={301 / 3 }/>
+          </div>
         </h1>
         <div className=' flex md:p-20 flex-wrap justify-center w-full gap-4'>
           <ArticleComp
