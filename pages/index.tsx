@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { useState } from 'react'
 import FooterComp from '../components/footer'
 import Frog from '../public/frog.svg'
+import Github from '../public/github.svg'
+import Link from 'next/link'
 const ArticleComp = dynamic(() => import('../components/article'), {
   ssr: false,
 })
@@ -63,6 +65,17 @@ export default function Home() {
 
             ]}
           />
+        </div>
+        <div className='flex justify-center'>
+          <Link href="https://github.com/fr0gtech/twitch-vod-chat-downloader">
+        <div className="bg-neutral-900 p-2 rounded mt-3 duration-500 !text-white opacity-40 hover:opacity-95 hover:shadow">
+                <div className="flex item-center gap-3">
+                <Github fill="#fff" width={18} height={18}/>
+                <p className='!text-sm m-0 p-0 font-semibold'>twitch-vod-chat-downloader</p>
+                </div>
+                <p className='!text-sm !my-1 max-w-[200px]'>Very simple template to download a twitch chat from a vod. gql</p>
+            </div>
+            </Link>
         </div>
       </main>
       <div className='shadow-xl flex items-center justify-center h-fill bg-gradient-to-r from-blue-400 to-orange-500 via-purple-500 animate-gradient-x my-20'>
