@@ -96,7 +96,7 @@ export default function Home() {
               <span className=''>🔔</span>
             }
             <button onClick={handleClick} className="shadow text-sm xl:text-xl bg-neutral-900 p-2 rounded select-none cursor-pointer active:scale-[1.01] active:rotate-[.5deg] duration-200">
-              if not bot joinDiscord(uggcf://qvfpbeq.tt/ac5eUPEXg2)
+              uggcf://qvfpbeq.tt/ac5eUPEXg2
             </button>
             <div className='flex flex-col gap-3'>
 
