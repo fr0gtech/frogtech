@@ -22,7 +22,7 @@ function ArticleComp(props:any){
           </div>
               {props.tags && 
               <div className="flex gap-1 mt-4 text-xs">
-                  {props.tags.map((tag:any)=>{return <div className={"rounded px-1" + " " + tag.color} key={tag.name}>{tag.name}</div>})}
+                  {props.tags.map((tag:any)=>{return <div className={"rounded px-1 py-1" + " " + tag.color} key={tag.name}>{tag.name}</div>})}
               </div>
               }
         </div>
@@ -51,7 +51,7 @@ function ArticleComp(props:any){
             </Link>
               {props.tags && 
               <div className="flex gap-1 mt-4 text-xs">
-                  {props.tags.map((tag:any)=>{return <div className={"rounded px-1" + " " + tag.color} key={tag.name}>{tag.name}</div>})}
+                  {props.tags.map((tag:any)=>{return <div className={"rounded px-1 py-1" + " " + tag.color} key={tag.name}>{tag.name}</div>})}
               </div>
               }
         </div>
