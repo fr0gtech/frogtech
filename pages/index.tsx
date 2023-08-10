@@ -53,6 +53,7 @@ export default function Home() {
             color="cyan-500"
             link="https://poke.frogtech.dev"
             title="poke+"
+            disabled="Discontinued"
             text="Create vod highlights from chat. Show graph like youtube but its chat activity."
 
             cta={{
