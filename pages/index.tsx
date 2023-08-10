@@ -107,7 +107,7 @@ export default function Home() {
           <div>
             <div className='flex justify-center'>
               <Link href="https://github.com/fr0gtech/twitch-vod-chat-downloader">
-                <div className="bg-neutral-900 p-2 rounded mt-3 duration-500 !text-white opacity-40 hover:opacity-95 hover:shadow">
+                <div className="bg-neutral-900 p-2 rounded mt-3 duration-500 !text-white opacity-70 hover:opacity-95 hover:shadow">
                   <div className="flex item-center gap-3">
                     <Github fill="#fff" width={18} height={18} />
                     <p className='!text-sm m-0 p-0 font-semibold'>twitch-vod-chat-downloader</p>
@@ -116,7 +116,7 @@ export default function Home() {
                 </div>
               </Link>
               <Link href="https://github.com/fr0gtech/frogBump">
-                <div className="bg-neutral-900 p-2 rounded mt-3 duration-500 !text-white opacity-40 hover:opacity-95 hover:shadow">
+                <div className="bg-neutral-900 p-2 rounded mt-3 duration-500 !text-white opacity-70 hover:opacity-95 hover:shadow">
                   <div className="flex item-center gap-3">
                     <Github fill="#fff" width={18} height={18} />
                     <p className='!text-sm m-0 p-0 font-semibold'>frogBump</p>
