@@ -70,7 +70,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className=' flex md:p-20 flex-wrap justify-center w-full gap-4'>
+        <div className=' flex md:p-20 flex-wrap justify-center w-full gap-4 mt-5'>
           <ArticleComp
             color="cyan-500"
             link="https://pokeING.frogtech.dev"
@@ -105,9 +105,9 @@ export default function Home() {
             ]}
           />
           <div>
-            <div className='flex justify-center'>
+            <div className='md:flex gap-1'>
               <Link href="https://github.com/fr0gtech/twitch-vod-chat-downloader">
-                <div className="bg-neutral-900 p-2 rounded mt-3 duration-500 !text-white opacity-70 hover:opacity-95 hover:shadow">
+                <div className="bg-neutral-800 p-2 rounded duration-500 !text-white opacity-70 hover:opacity-95 hover:shadow">
                   <div className="flex item-center gap-3">
                     <Github fill="#fff" width={18} height={18} />
                     <p className='!text-sm m-0 p-0 font-semibold'>twitch-vod-chat-downloader</p>
@@ -116,7 +116,7 @@ export default function Home() {
                 </div>
               </Link>
               <Link href="https://github.com/fr0gtech/frogBump">
-                <div className="bg-neutral-900 p-2 rounded mt-3 duration-500 !text-white opacity-70 hover:opacity-95 hover:shadow">
+                <div className="bg-neutral-800 p-2 rounded duration-500 mt-2 md:mt-0 !text-white opacity-70 hover:opacity-95 hover:shadow">
                   <div className="flex item-center gap-3">
                     <Github fill="#fff" width={18} height={18} />
                     <p className='!text-sm m-0 p-0 font-semibold'>frogBump</p>
